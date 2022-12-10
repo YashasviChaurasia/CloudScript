@@ -7,9 +7,9 @@ nvm_has() {
 }
 
 nvm_install_dir() {
-  echo "${NVM_DIR:-"$HOME/.nvm"}"
+  echo "${NVM_DIR:-"/home/ec2-user/.nvm"}"
 }
-
+#HOme=/home/ec2-user
 nvm_latest_version() {
   echo "v0.32.0"
 }
@@ -182,24 +182,24 @@ nvm_detect_profile() {
   SHELLTYPE="$(basename "/$SHELL")"
 
   if [ "$SHELLTYPE" = "bash" ]; then
-    if [ -f "$HOME/.bashrc" ]; then
-      DETECTED_PROFILE="$HOME/.bashrc"
-    elif [ -f "$HOME/.bash_profile" ]; then
-      DETECTED_PROFILE="$HOME/.bash_profile"
+    if [ -f "$/home/ec2-user/.bashrc" ]; then
+      DETECTED_PROFILE="$/home/ec2-user/.bashrc"
+    elif [ -f "$/home/ec2-user/.bash_profile" ]; then
+      DETECTED_PROFILE="$/home/ec2-user/.bash_profile"
     fi
   elif [ "$SHELLTYPE" = "zsh" ]; then
-    DETECTED_PROFILE="$HOME/.zshrc"
+    DETECTED_PROFILE="$/home/ec2-user/.zshrc"
   fi
 
   if [ -z "$DETECTED_PROFILE" ]; then
-    if [ -f "$HOME/.profile" ]; then
-      DETECTED_PROFILE="$HOME/.profile"
-    elif [ -f "$HOME/.bashrc" ]; then
-      DETECTED_PROFILE="$HOME/.bashrc"
-    elif [ -f "$HOME/.bash_profile" ]; then
-      DETECTED_PROFILE="$HOME/.bash_profile"
-    elif [ -f "$HOME/.zshrc" ]; then
-      DETECTED_PROFILE="$HOME/.zshrc"
+    if [ -f "$/home/ec2-user/.profile" ]; then
+      DETECTED_PROFILE="$/home/ec2-user/.profile"
+    elif [ -f "$/home/ec2-user/.bashrc" ]; then
+      DETECTED_PROFILE="$/home/ec2-user/.bashrc"
+    elif [ -f "$/home/ec2-user/.bash_profile" ]; then
+      DETECTED_PROFILE="$/home/ec2-user/.bash_profile"
+    elif [ -f "$/home/ec2-user/.zshrc" ]; then
+      DETECTED_PROFILE="$/home/ec2-user/.zshrc"
     fi
   fi
 
