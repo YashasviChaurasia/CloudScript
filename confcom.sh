@@ -1,4 +1,5 @@
 #!/bin/bash
+cd /home/ec2-user
 curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.32.0/install.sh | bash
 . /home/ec2-user/.nvm/nvm.sh
 echo "mf2">test3.log
